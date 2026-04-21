@@ -1,5 +1,5 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.types import StructType, StructField, StringType, IntegerType, DoubleType
+from pyspark.sql.types import StructType, StructField,StringType, IntegerType, DoubleType
 
 # Create SparkSession
 spark = SparkSession.builder \
@@ -24,6 +24,8 @@ dept_data = [
 dept_df = spark.createDataFrame(dept_data, dept_schema)
 print("\n=== DEPARTMENT DataFrame ===")
 dept_df.show()
+
+# dept_df.display()
 
 # ========== EMPLOYEE DataFrame ==========
 emp_schema = StructType([
